@@ -17,6 +17,8 @@ app.get("/", (req, res) => {
 
 const port = process.env.PORT || 4545;
 
+app.use(rollbar.errorHandler());
+
 app.listen(port, () => {
     console.log(`They're taking the Hobbits to ${port}!`);
 })
